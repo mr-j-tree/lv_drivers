@@ -23,10 +23,17 @@ extern "C" {
 
 #if USE_KEYBOARD
 
+
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
 #include "lvgl.h"
 #else
-#include "lvgl/lvgl.h"
+
+#ifndef KEYBOARD_LVGL_INCLUDE_PATH
+#define KEYBOARD_LVGL_INCLUDE_PATH "../../lvgl/lvgl.h"
+#endif
+
+#include KEYBOARD_LVGL_INCLUDE_PATH
+
 #endif
 
 #ifndef MONITOR_SDL_INCLUDE_PATH

@@ -26,7 +26,13 @@ extern "C" {
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
 #include "lvgl.h"
 #else
-#include "lvgl/lvgl.h"
+
+#ifndef MOUSE_LVGL_INCLUDE_PATH
+#define MOUSE_LVGL_INCLUDE_PATH "../../lvgl/lvgl.h"
+#endif
+
+#include MOUSE_LVGL_INCLUDE_PATH
+
 #endif
 
 #ifndef MONITOR_SDL_INCLUDE_PATH

@@ -26,7 +26,12 @@ extern "C" {
 #ifdef LV_LVGL_H_INCLUDE_SIMPLE
 #include "lvgl.h"
 #else
-#include "lvgl/lvgl.h"
+
+#ifndef MONITOR_LVGL_INCLUDE_PATH
+#define MONITOR_LVGL_INCLUDE_PATH "lvgl/lvgl.h"
+#endif
+
+#include MONITOR_LVGL_INCLUDE_PATH
 #endif
 
 /*********************
